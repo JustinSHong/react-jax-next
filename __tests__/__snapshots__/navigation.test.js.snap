@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`with snapshot testing renders correctly 1`] = `
+<nav
+  className="jsx-79800652"
+>
+  <a
+    className="jsx-79800652"
+    href="/"
+    onClick={[Function]}
+  >
+    Home
+  </a>
+  <a
+    className="jsx-79800652"
+    href="/characters"
+    onClick={[Function]}
+  >
+    Characters
+  </a>
+  <a
+    className="jsx-79800652"
+    href="/planets"
+    onClick={[Function]}
+  >
+    Planets
+  </a>
+</nav>
+`;

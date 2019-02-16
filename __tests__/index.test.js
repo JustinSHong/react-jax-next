@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import { create } from "react-test-renderer";
 import Router from "next/router";
-
+// Components
 import Home from "../pages/index.js";
 
 const mockedRouter = { push: () => {}, prefetch: () => {} };
@@ -29,7 +29,6 @@ describe("Home using create()", () => {
     it("should have a header", () => {
         const component = create(<Home />);
         const header = component.root.findByType("h1");
-        console.log(header.props.children);
         expect(header).toBeTruthy();
         expect(header.props.children).toBe(
             "My First Little Next.js App...featuring Star Wars!"
