@@ -22,28 +22,27 @@ describe("Navigation using shallow()", () => {
         expect(component.find("nav")).toHaveLength(1);
     });
 
-    it("should have 3 Link elements", () => {
+    describe("Link elements", () => {
         const component = shallow(<Navigation />);
-        expect(component.find("Link")).toHaveLength(3);
-    });
 
-    it("should have 3 <a> elements", () => {
-        const component = shallow(<Navigation />);
-        expect(component.find("a")).toHaveLength(3);
-    });
+        it("should have 3 Link elements", () => {
+            expect(component.find("Link")).toHaveLength(3);
+        });
 
-    it("should have a link to Home page", () => {
-        const component = shallow(<Navigation />);
-        expect(component.contains(<a>Home</a>));
-    });
+        it("should have 3 <a> elements", () => {
+            expect(component.find("a")).toHaveLength(3);
+        });
 
-    it("should have a link to Characters page", () => {
-        const component = shallow(<Navigation />);
-        expect(component.contains(<a>Characters</a>));
-    });
+        it("should have a link to Home page", () => {
+            expect(component.contains(<a>Home</a>));
+        });
 
-    it("should have a link to Planets page", () => {
-        const component = shallow(<Navigation />);
-        expect(component.contains(<a>Planets</a>));
+        it("should have a link to Characters page", () => {
+            expect(component.contains(<a>Characters</a>));
+        });
+
+        it("should have a link to Planets page", () => {
+            expect(component.contains(<a>Planets</a>));
+        });
     });
 });
