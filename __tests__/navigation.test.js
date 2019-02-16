@@ -15,3 +15,21 @@ describe("with snapshot testing", () => {
         expect(tree).toMatchSnapshot();
     });
 });
+
+describe("Navigation using shallow()", () => {
+    it("should have a nav element", () => {
+        const component = shallow(<Navigation />);
+        console.log(component.debug());
+        expect(component.find("nav")).toHaveLength(1);
+    });
+
+    it("should have 3 Link elements", () => {
+        const component = shallow(<Navigation />);
+        expect(component.find("Link")).toHaveLength(3);
+    });
+
+    it("should have 3 <a> elements", () => {
+        const component = shallow(<Navigation />);
+        expect(component.find("a")).toHaveLength(3);
+    });
+});
