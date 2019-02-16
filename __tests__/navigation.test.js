@@ -19,7 +19,6 @@ describe("with snapshot testing", () => {
 describe("Navigation using shallow()", () => {
     it("should have a nav element", () => {
         const component = shallow(<Navigation />);
-        console.log(component.debug());
         expect(component.find("nav")).toHaveLength(1);
     });
 
@@ -31,5 +30,20 @@ describe("Navigation using shallow()", () => {
     it("should have 3 <a> elements", () => {
         const component = shallow(<Navigation />);
         expect(component.find("a")).toHaveLength(3);
+    });
+
+    it("should have a link to Home page", () => {
+        const component = shallow(<Navigation />);
+        expect(component.contains(<a>Home</a>));
+    });
+
+    it("should have a link to Characters page", () => {
+        const component = shallow(<Navigation />);
+        expect(component.contains(<a>Characters</a>));
+    });
+
+    it("should have a link to Planets page", () => {
+        const component = shallow(<Navigation />);
+        expect(component.contains(<a>Planets</a>));
     });
 });
