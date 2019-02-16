@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`with snapshot testing Home matches previous snapshot 1`] = `
+<div>
+  <nav
+    className="jsx-79800652"
+  >
+    <a
+      className="jsx-79800652"
+      href="/"
+      onClick={[Function]}
+    >
+      Home
+    </a>
+    <a
+      className="jsx-79800652"
+      href="/characters"
+      onClick={[Function]}
+    >
+      Characters
+    </a>
+    <a
+      className="jsx-79800652"
+      href="/planets"
+      onClick={[Function]}
+    >
+      Planets
+    </a>
+  </nav>
+  <h1>
+    My First Little Next.js App...featuring Star Wars!
+  </h1>
+</div>
+`;
