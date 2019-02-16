@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`with snapshot testing Home matches previous snapshot 1`] = `
+exports[`with snapshot testing renders correctly 1`] = `
 <div>
   <nav
     className="jsx-79800652"

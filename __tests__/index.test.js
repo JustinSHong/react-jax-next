@@ -9,7 +9,7 @@ const mockedRouter = { push: () => {}, prefetch: () => {} };
 Router.router = mockedRouter;
 
 describe("with snapshot testing", () => {
-    it("Home matches previous snapshot", () => {
+    it("renders correctly", () => {
         const component = renderer.create(<Home />);
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
