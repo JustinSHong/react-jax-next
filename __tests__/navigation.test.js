@@ -46,3 +46,35 @@ describe("Navigation using shallow()", () => {
         });
     });
 });
+
+describe("Navigation using create()", () => {
+    it("should have a nav element", () => {
+        const component = create(<Navigation />);
+        const nav = component.root.findByType("nav");
+        expect(nav).toBeTruthy();
+    });
+
+    describe("Link elements", () => {
+        const component = create(<Navigation />);
+        const links = component.toJSON().children;
+
+        it("should have 3 Link elements", () => {
+            expect(links).toHaveLength(3);
+        });
+
+        it("should have a link to Home page", () => {
+            expect(links[0].type).toBe("a");
+            expect(links[0].children[0]).toBe("Home");
+        });
+
+        it("should have a link to Characters page", () => {
+            expect(links[1].type).toBe("a");
+            expect(links[1].children[0]).toBe("Characters");
+        });
+
+        it("should have a link to Planets page", () => {
+            expect(links[2].type).toBe("a");
+            expect(links[2].children[0]).toBe("Planets");
+        });
+    });
+});
