@@ -18,3 +18,22 @@ describe("with snapshot testing", () => {
         expect(tree).toMatchSnapshot();
     });
 });
+
+// using enzyme shallow method
+describe("Characters using shallow()", () => {
+    const component = shallow(<Characters data={data} />);
+
+    it("should have a nav bar", () => {
+        expect(component.find("nav")).toBeTruthy();
+    });
+});
+
+// using react-test-renderer
+describe("Characters using create()", () => {
+    const component = create(<Characters data={data} />);
+
+    it("should have a nav bar", () => {
+        const nav = component.root.findByType("nav");
+        expect(nav).toBeTruthy();
+    });
+});
