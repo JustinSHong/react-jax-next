@@ -4,6 +4,7 @@ import { create } from "react-test-renderer";
 import Router from "next/router";
 // Components
 import Characters from "../pages/characters";
+import Navigation from "../components/Navigation";
 import List from "../components/List";
 
 const mockedRouter = { push: () => {}, prefetch: () => {} };
@@ -26,11 +27,13 @@ describe("Characters using shallow()", () => {
     it("should have a nav bar", () => {
         expect(component.find("Navigation")).toBeTruthy();
         expect(component.find("Navigation")).toHaveLength(1);
+        expect(component.contains(<Navigation />)).toBe(true);
     });
 
     it("should have a header", () => {
         expect(component.find("h1")).toBeTruthy();
         expect(component.find("h1")).toHaveLength(1);
+        expect(component.contains(<h1>Characters!</h1>)).toBe(true);
     });
 });
 

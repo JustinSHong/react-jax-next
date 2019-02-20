@@ -4,6 +4,7 @@ import { create } from "react-test-renderer";
 import Router from "next/router";
 // Components
 import Home from "../pages/index.js";
+import Navigation from "../components/Navigation";
 
 const mockedRouter = { push: () => {}, prefetch: () => {} };
 Router.router = mockedRouter;
@@ -23,11 +24,17 @@ describe("Home using shallow()", () => {
     it("should have a header", () => {
         expect(component.find("h1")).toBeTruthy();
         expect(component.find("h1")).toHaveLength(1);
+        expect(
+            component.contains(
+                <h1>My First Little Next.js App...featuring Star Wars!</h1>
+            )
+        ).toBe(true);
     });
 
     it("should have a nav bar", () => {
         expect(component.find("Navigation")).toBeTruthy();
         expect(component.find("Navigation")).toHaveLength(1);
+        expect(component.contains(<Navigation />)).toBe(true);
     });
 });
 
