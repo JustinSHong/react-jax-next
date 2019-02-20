@@ -25,10 +25,12 @@ describe("Characters using shallow()", () => {
 
     it("should have a nav bar", () => {
         expect(component.find("Navigation")).toBeTruthy();
+        expect(component.find("Navigation")).toHaveLength(1);
     });
 
     it("should have a header", () => {
         expect(component.find("h1")).toBeTruthy();
+        expect(component.find("h1")).toHaveLength(1);
     });
 });
 
@@ -46,5 +48,6 @@ describe("Characters using create()", () => {
         const header = component.root.findByType("h1");
         expect(header).toBeTruthy();
         expect(header.type).toBe("h1");
+        expect(header.props.children).toBe("Characters!");
     });
 });
