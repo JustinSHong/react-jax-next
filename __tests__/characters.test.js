@@ -24,7 +24,11 @@ describe("Characters using shallow()", () => {
     const component = shallow(<Characters data={data} />);
 
     it("should have a nav bar", () => {
-        expect(component.find("nav")).toBeTruthy();
+        expect(component.find("Navigation")).toBeTruthy();
+    });
+
+    it("should have a header", () => {
+        expect(component.find("h1")).toBeTruthy();
     });
 });
 
@@ -35,5 +39,12 @@ describe("Characters using create()", () => {
     it("should have a nav bar", () => {
         const nav = component.root.findByType("nav");
         expect(nav).toBeTruthy();
+        expect(nav.type).toBe("nav");
+    });
+
+    it("should have a header", () => {
+        const header = component.root.findByType("h1");
+        expect(header).toBeTruthy();
+        expect(header.type).toBe("h1");
     });
 });
