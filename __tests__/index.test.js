@@ -18,20 +18,31 @@ describe("with snapshot testing", () => {
 
 // using enzyme shallow method
 describe("Home using shallow()", () => {
+    const component = shallow(<Home />);
+
     it("should have a header", () => {
-        const component = shallow(<Home />);
         expect(component.find("h1")).toHaveLength(1);
+    });
+
+    it("should have a nav bar", () => {
+        expect(component.find("Navigation")).toHaveLength(1);
     });
 });
 
 // using react-test-renderer
 describe("Home using create()", () => {
+    const component = create(<Home />);
+
     it("should have a header", () => {
-        const component = create(<Home />);
         const header = component.root.findByType("h1");
         expect(header).toBeTruthy();
         expect(header.props.children).toBe(
             "My First Little Next.js App...featuring Star Wars!"
         );
+    });
+
+    it("should have a nav bar", () => {
+        const nav = component.root.findByType("nav");
+        expect(nav).toBeTruthy();
     });
 });
