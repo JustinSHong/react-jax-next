@@ -31,6 +31,11 @@ describe("Planets using shallow()", () => {
     it("should have a header", () => {
         expect(component.contains(<h1>Planets!</h1>)).toBe(true);
     });
+
+    it("should have className container", () => {
+        expect(component.exists(".container")).toBe(true);
+        expect(component.find(".container")).toHaveLength(1);
+    });
 });
 
 // using react-test-renderer
@@ -50,5 +55,11 @@ describe("Planets using shallow()", () => {
         expect(header).toBeTruthy();
         expect(header.type).toBe("h1");
         expect(header.props.children).toBe("Planets!");
+    });
+
+    it("should have className container", () => {
+        const container = component.root.findAllByType("div");
+        expect(Boolean(container[1].props.className)).toBe(true);
+        expect(container[1].props.className).toBe("jsx-783486823 container");
     });
 });
