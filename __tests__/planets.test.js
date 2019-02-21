@@ -27,6 +27,10 @@ describe("Planets using shallow()", () => {
     it("should have a nav bar", () => {
         expect(component.contains(<Navigation />)).toBe(true);
     });
+
+    it("should have a header", () => {
+        expect(component.contains(<h1>Planets!</h1>)).toBe(true);
+    });
 });
 
 // using react-test-renderer
@@ -38,5 +42,13 @@ describe("Planets using shallow()", () => {
 
         expect(nav).toBeTruthy();
         expect(nav.type).toBe("nav");
+    });
+
+    it("should have a header", () => {
+        const header = component.root.findByType("h1");
+
+        expect(header).toBeTruthy();
+        expect(header.type).toBe("h1");
+        expect(header.props.children).toBe("Planets!");
     });
 });
