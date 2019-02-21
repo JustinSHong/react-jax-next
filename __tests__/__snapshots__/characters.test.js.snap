@@ -31,7 +31,7 @@ exports[`with snapshot testing renders correctly 1`] = `
     Characters!
   </h1>
   <div
-    className="jsx-783486823 container"
+    className="jsx-2681821622 container"
   >
     <ul
       className="jsx-3916819565"

@@ -35,6 +35,11 @@ describe("Characters using shallow()", () => {
         expect(component.find("h1")).toHaveLength(1);
         expect(component.contains(<h1>Characters!</h1>)).toBe(true);
     });
+
+    it("should have className container", () => {
+        expect(component.exists(".container")).toBe(true);
+        expect(component.find(".container")).toHaveLength(1);
+    });
 });
 
 // using react-test-renderer
@@ -52,5 +57,11 @@ describe("Characters using create()", () => {
         expect(header).toBeTruthy();
         expect(header.type).toBe("h1");
         expect(header.props.children).toBe("Characters!");
+    });
+
+    it("should have className container", () => {
+        const container = component.root.findAllByType("div");
+        expect(container[1].props.className).toBeTruthy();
+        expect(container[1].props.className).toBe("jsx-2681821622 container");
     });
 });
