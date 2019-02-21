@@ -36,6 +36,39 @@ describe("Planets using shallow()", () => {
         expect(component.exists(".container")).toBe(true);
         expect(component.find(".container")).toHaveLength(1);
     });
+
+    it("works with async/await", async () => {
+        const req = { req: {} };
+        const props = await Planets.getInitialProps(req);
+        const wrapper = shallow(<Planets {...props} />);
+        const results = wrapper.instance().props.data.results;
+
+        expect(Array.isArray(results)).toBe(true);
+        expect(results.length).toBe(10);
+        expect(results[0]).toEqual({
+            name: "Alderaan",
+            rotation_period: "24",
+            orbital_period: "364",
+            diameter: "12500",
+            climate: "temperate",
+            gravity: "1 standard",
+            terrain: "grasslands, mountains",
+            surface_water: "40",
+            population: "2000000000",
+            residents: [
+                "https://swapi.co/api/people/5/",
+                "https://swapi.co/api/people/68/",
+                "https://swapi.co/api/people/81/"
+            ],
+            films: [
+                "https://swapi.co/api/films/6/",
+                "https://swapi.co/api/films/1/"
+            ],
+            created: "2014-12-10T11:35:48.479000Z",
+            edited: "2014-12-20T20:58:18.420000Z",
+            url: "https://swapi.co/api/planets/2/"
+        });
+    });
 });
 
 // using react-test-renderer
