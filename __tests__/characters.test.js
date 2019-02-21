@@ -1,11 +1,10 @@
-import react from "react";
+import React from "react";
 import { shallow } from "enzyme";
 import { create } from "react-test-renderer";
 import Router from "next/router";
 // Components
 import Characters from "../pages/characters";
 import Navigation from "../components/Navigation";
-import List from "../components/List";
 
 const mockedRouter = { push: () => {}, prefetch: () => {} };
 Router.router = mockedRouter;
