@@ -4,7 +4,6 @@ import { create } from "react-test-renderer";
 import Router from "next/router";
 // Components
 import Planets from "../pages/planets";
-import List from "../components/List";
 import Navigation from "../components/Navigation";
 
 const mockedRouter = { push: () => {}, prefetch: () => {} };

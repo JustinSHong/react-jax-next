@@ -4,7 +4,7 @@
     "description": "A basic react app using Next.js",
     "main": "index.js",
     "scripts": {
-        "test": "jest --verbose --watchAll",
+        "test": "jest --verbose --watchAll --coverage",
         "dev": "next",
         "build": "next build",
         "start": "next start"

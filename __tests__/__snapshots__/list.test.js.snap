@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`with snapshot renders correctly 1`] = `
+<ul
+  className="jsx-2207742596"
+>
+  <li
+    className="jsx-286964681"
+  />
+</ul>
+`;
